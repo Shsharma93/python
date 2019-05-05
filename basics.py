@@ -6,4 +6,4 @@
 # Operators - +, -, *, /, //, **, %
 # List - Array in other language. ['Shashank', 9, True, ['nested', 9 ]] - length = 4
 # List - append() to add value at end in lists, pop() to remove last element from list. 
-
+# and or is in not
