@@ -1,4 +1,11 @@
-blockchain = []
+genesis_block = {
+    'previous_hash': '',
+    'index': 0,
+    'transaction': []
+}
+blockchain = [genesis_block]
+open_transactions = []
+owner = 'Shas'
 
 
 def get_last_blockchain_value():
@@ -7,14 +14,35 @@ def get_last_blockchain_value():
     return blockchain[-1]
 
 
-def add_transaction(transaction_amount, last_transaction):
-    if last_transaction == None:
-        last_transaction = [1]
-    blockchain.append([last_transaction, transaction_amount])
+def add_transaction(recipient, sender=owner, amount=1.0):
+    transaction = {
+        'sender': sender,
+        'recipient': recipient,
+        'amount': amount
+    }
+    open_transactions.append(transaction)
+
+
+def mine_block():
+    last_block = blockchain[-1]
+    hashed_block = ''
+    for key in last_block:
+        value = last_block[key]
+        hashed_block += str(value)
+    print(blockchain)
+    print(hashed_block)
+    block = {
+        'previous_hash': 'XYZ',
+        'index': len(blockchain),
+        'transaction': open_transactions
+    }
+    blockchain.append(block)
 
 
 def get_transaction_value():
-    return input('Please enter transaction amount : ')
+    tx_recipient = input('Enter the recipient of the transaction : ')
+    tx_amount = float(input('Please enter transaction amount : '))
+    return (tx_recipient, tx_amount)
 
 
 def get_user_choice():
@@ -49,15 +77,17 @@ waiting_for_input = True
 while waiting_for_input:
     print('Please choose the options')
     print('1: Add a new transaction value')
-    print('2: Output blockchain blocks')
+    print('2: Mine a new block')
+    print('3: Output blockchain blocks')
     print('h: Manipulate the chain')
     print('q or Q: Exit.')
     user_choice = get_user_choice()
     if user_choice == '1':
-        tx_amount = get_transaction_value()
-        if tx_amount != '':
-            add_transaction(float(tx_amount), get_last_blockchain_value())
+        recipient, amount = get_transaction_value()
+        add_transaction(recipient, amount=amount)
     elif user_choice == '2':
+        mine_block()
+    elif user_choice == '3':
         print_blockchain_elements()
     elif user_choice == 'h':
         if len(blockchain) >= 1:
@@ -67,10 +97,10 @@ while waiting_for_input:
     else:
         print('Wrong choice')
 
-    if not verify_chain():
-        print('Invaid Blockchain')
-        print(blockchain)
-        break
+    # if not verify_chain():
+    #     print('Invaid Blockchain')
+    #     print(blockchain)
+    #     break
 else:
     print('User Left')
 
