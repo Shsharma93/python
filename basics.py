@@ -1,9 +1,41 @@
-# Data type
-# Numbers - Integers = 10, -3, int('3') = 3, int(True) = 1
-# Numbers - Float = 1.8, -3.687, float('29') = 29.0, float(True) = 1.0
-# Boolean - True or False
-# Strings - 'Shashank', "Shashank", """Multiple line string inside three quote mark"""
-# Operators - +, -, *, /, //, **, %
-# List - Array in other language. ['Shashank', 9, True, ['nested', 9 ]] - length = 4
-# List - append() to add value at end in lists, pop() to remove last element from list. 
-# and or is in not
+print("hello world 😃")
+print("*" * 10)
+age = 26
+ratings = 4.9
+isPublished = True
+print(age)
+print(isPublished)
+print(ratings)
+course = "Python Programming"
+# "Python \\Programming" output - Python \Programming
+# \\
+# \"
+# \'
+# \n
+
+message = """
+Hi, How are you?
+I'm fine.
+"""
+len(course)
+print(course[0])  # first letter of string
+print(course[-1])  # last leeter of string
+print(course[2:5])  # 2-5 chars of string
+print(message)
+
+
+first = 'shashank'
+last = 'Kumar'
+print(first.upper())
+print(first.title())
+print(last.lower())
+# remove white space form start and end of string rstrip() lstrip()
+print(first.strip())
+print(last.find('ma'))  # index
+#full = first + " " + last
+full = f"{first} {len(last)} {2+4}"
+
+print(first.replace("s", "S"))
+print('s' in first)
+print('swift' not in first)
+print(full)
