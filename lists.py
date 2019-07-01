@@ -1,5 +1,7 @@
 
 # list
+
+
 def lists_demo():
     numbers = [1, 2, 3, 4, 5, 6]
     fruits = ['Mango', 'Apple', 'Oranges', 'Banana']
@@ -44,11 +46,26 @@ def sets_demo():
     # del fruits_set
     print(fruits_set)
 
-
 # sets_demo()
 
 
+def set_operations(operation_type):
+    number_1 = {1, 4, 6, 8, 12}
+    number_2 = {3, 6, 1, 5}
+
+    if operation_type is 'union':
+        return number_1.union(number_2)
+    elif operation_type is 'intersection':
+        return number_1.intersection(number_2)
+    elif operation_type is 'diff':
+        return number_2.difference(number_1)
+
+
+#print(set_operations('diff'))
+
 # Dictionary
+
+
 def dictionary_demo():
     person = {
         'first_name': 'Shashank',
