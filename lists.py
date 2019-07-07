@@ -5,14 +5,29 @@
 def lists_demo():
     numbers = [1, 2, 3, 4, 5, 6]
     fruits = ['Mango', 'Apple', 'Oranges', 'Banana']
+    first, second, *others = numbers  # list unpacking first, *others, last
+    print(first, second, others)
+    print(sorted(fruits))
+    first,  *others, last = numbers
+    print(numbers.count(5))  # print number of times 5 in the lists
+    print(first, last, others)
+    print(fruits[-1])  # Banana
+    print(numbers[0:3:2])  # 1,3
+    print(numbers[::-1])  # 6,5,4,3,2,1
+    print(numbers * 5)
+    print(numbers + fruits)
+    print(list(range(1, 20, 3)))
+    print(list("Shashank"))
     print(numbers)
     print(fruits[1])
     print(len(fruits))
     print(len(fruits[2]))
-    fruits.append('Lichi')
+    fruits.append('Lichi')  # at the end
     fruits.remove('Mango')
-    fruits.insert(2, 'Grapes')
-    fruits.pop(3)
+    fruits.insert(2, 'Grapes')  # insert at specific position
+    del fruits[0:2]  # remove elements from index 0 to 2
+    fruits.pop(3)  # remove specific element
+    fruits.pop()  # remove last element
     fruits.reverse()
     fruits.sort()
     fruits.sort(reverse=True)
@@ -23,7 +38,19 @@ def lists_demo():
 # lists_demo()
 
 
+def lists_loop(letters):
+    for index, letter in enumerate(letters):
+        print(index, letter)
+
+    if 'e' in letters:
+        print(letters.index('e'))
+
+
+lists_loop(['a', 'b', 'c', 'd', 'e'])
+
 # Tuples - ordered and unchangeable
+
+
 def tuple_demo():
     fruits = ('Mango', 'Apple', 'Grapes')
     fruits2 = ('Apple', 'Oranges', 'Lichi')
@@ -61,7 +88,7 @@ def set_operations(operation_type):
         return number_2.difference(number_1)
 
 
-#print(set_operations('diff'))
+# print(set_operations('diff'))
 
 # Dictionary
 

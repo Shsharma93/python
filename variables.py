@@ -1,4 +1,7 @@
 # variables & string
+import math
+
+
 def variables_demo():
     print("hello world")
     print("*" * 10)
@@ -47,4 +50,18 @@ def variables_demo():
     print(first.split(" "))
 
 
-variables_demo()
+def string_demo():
+
+    course = " python programming"
+    print("pro" in course)
+    print(round(2.9))
+    print(abs(-2))
+    print(math.ceil(2.2))
+    print(math.factorial(3))
+    x = int(input("X : "))
+    y = x + 1 # int(), float(), str(), bool()
+    print(y)
+
+
+string_demo()
+# variables_demo()

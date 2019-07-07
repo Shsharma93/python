@@ -1,6 +1,8 @@
 
 # if else elif
-
+#and, or, not
+#chaining comparison operator
+# 18<= age < 65
 
 def conditionals_demo(x, y, z):
     if x > y and x > z:
@@ -49,5 +51,11 @@ def is_not(x, y):
 
 # is_not(4, 4)
 
+print(ord('A'))
 
 
+def ternary_operator(age):
+    msg = "Eligible" if age >= 18 else "Not eligible"
+    print(msg)
+
+#ternary_operator(16)

@@ -24,9 +24,11 @@ def list_comprehension(num):
 
 # list_comprehension(6)
 
-def multiple_args(*args, **kwargs):
-    print(args)
-    print(kwargs)
+def multiple_args(*numbers, **args):
+    for number in numbers:
+        print(number)
+    for arg in args:
+        print(args[arg])
 
 
 multiple_args(3, 4, 5, 6, 7, 8, 7, name="Shashank", location="Brisbane")

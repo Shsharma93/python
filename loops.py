@@ -5,6 +5,8 @@ def loops(people):
         print(person)
     for i in range(-1, 20, 2):  # range(5) , range(5, 10)
         print(i)
+    for x in "Python":
+        print(x)
 
 
 def loops_demo():
@@ -28,7 +30,19 @@ def while_demo():
             user_entered = False
 
 
-while_demo()
+# while_demo()
+
+def for_else_demo():
+    successful = False
+    for number in range(3):
+        print('Attempt')
+        if successful:
+            print("Successful")
+            break
+    else:
+        print("Attempted 3 times and failed.")
 
 
-#loops(['Shashank', 'Shivani', 'Shakya', 'Shipra'])
+#for_else_demo()
+
+loops(['Shashank', 'Shivani', 'Shakya', 'Shipra'])
